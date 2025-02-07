@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Beautiful Girl</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .btn {
+            background: #ff4e50;
+            padding: 15px 30px;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            background: #fc6076;
+        }
+        .floating-hearts {
+            position: absolute;
+            top: -50px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 2em;
+            animation: floatUp 5s linear infinite;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100vh); }
+        }
+    </style>
+</head>
+<body>
+    <h1>My Beautiful Girl 💖</h1>
+    <img src="C:\Users\Shan\Desktop\HS\1738933972954211.jpg" alt="My Beautiful Girl">
+    <p>You are my sunshine on the cloudiest days! ☀️</p>
+    <button class="btn" onclick="showMessage()">Tap for Love 💕</button>
+
+    <script>
+        function showMessage() {
+            document.querySelector('.btn').innerText = "You are my Everything! 💗";
+        }
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💖';
+            heart.classList.add('floating-hearts');
+            document.body.appendChild(heart);
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 250);
+    </script>
+</body>
+</html>
